@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+#slider .slides {
+    background: gainsboro;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+#slider .slides .slide {
+    flex-shrink: 0;
+    width: 600px;
+    height: 100%;
+    background: gainsboro;
+}
+
+#slider .slides .slide img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+#slider .slides .carousel {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+#slider .slides .dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+#slider .slides .dots .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #fff;
+    opacity: 0.7;
+    border: none;
+    border-radius: 50%;
+    margin: 0 0.375rem;
+    cursor: pointer;
+}
+
+#slider .slides .dots .dot.active {
+   opacity: 1;
+}
+
+#slider .buttons {
+    margin-top: 1rem;
+}
+
+#slider .buttons #prev,
+#slider .buttons #next {
+    background: gainsboro;
+    border: 1px solid #000;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
