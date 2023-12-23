@@ -4,10 +4,166 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Lab 3 - panda3</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            h3 {
+                margin-bottom: 1rem;
+            }
+
+            .canal {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                margin-bottom: 4px;
+                border: 1px solid black;
+            }
+
+            .canal button {
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid cornflowerblue;
+                background-color: cornflowerblue;
+                cursor: pointer;
+            }
+
+            .play {
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid cornflowerblue;
+                background-color: cornflowerblue;
+                cursor: pointer;
+                margin-top: 1rem;
+            }
+
+            .keys {
+                display: flex;
+                gap: 10px;
+                margin-top: 1rem;
+            }
+
+            .controls {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 1rem;
+            }
+        </style>
     </head>
     <body>
-        <audio src="./sounds/clap.wav" controls id="s1"></audio>
-        <audio src="./sounds/hihat.wav" controls id="s2"></audio>
+        <h3>Current canal: <span id="current-canal">-</span></h3>
+
+        <div id="canals">
+            <div class="canal">
+                <div>
+                    <p>Canal 1</p>
+                    <label>
+                        <input type="checkbox" name="playable-canal" data-canal="1" checked />
+                        Play
+                    </label>
+                </div>
+                <button type="button" class="canal-btn" onclick="setCurrentCanal(1)">Set canal</button>
+            </div>
+
+            <div class="canal">
+                <div>
+                    <p>Canal 2</p>
+                    <label>
+                        <input type="checkbox" name="playable-canal" data-canal="2" checked />
+                        Play
+                    </label>
+                </div>
+                <button type="button" class="canal-btn" onclick="setCurrentCanal(2)">Set canal</button>
+            </div>
+
+            <div class="canal">
+                <div>
+                    <p>Canal 3</p>
+                    <label>
+                        <input type="checkbox" name="playable-canal" data-canal="3" checked />
+                        Play
+                    </label>
+                </div>
+                <button type="button" class="canal-btn" onclick="setCurrentCanal(3)">Set canal</button>
+            </div>
+
+            <div class="canal">
+                <div>
+                    <p>Canal 4</p>
+                    <label>
+                        <input type="checkbox" name="playable-canal" data-canal="4" checked />
+                        Play
+                    </label>
+                </div>
+                <button type="button" class="canal-btn" onclick="setCurrentCanal(4)">Set canal</button>
+            </div>
+        </div>
+
+        <button id="btn-play" class="play" type="button">Play</button>
+
+        <div class="keys">
+            <div data-key="65" class="key">
+                <kbd>A</kbd>
+                <span class="sound">clap</span>
+            </div>
+            <div data-key="83" class="key">
+                <kbd>S</kbd>
+                <span class="sound">hihat</span>
+            </div>
+            <div data-key="68" class="key">
+                <kbd>D</kbd>
+                <span class="sound">kick</span>
+            </div>
+            <div data-key="70" class="key">
+                <kbd>F</kbd>
+                <span class="sound">openhat</span>
+            </div>
+            <div data-key="71" class="key">
+                <kbd>G</kbd>
+                <span class="sound">boom</span>
+            </div>
+            <div data-key="72" class="key">
+                <kbd>H</kbd>
+                <span class="sound">ride</span>
+            </div>
+            <div data-key="74" class="key">
+                <kbd>J</kbd>
+                <span class="sound">snare</span>
+            </div>
+            <div data-key="75" class="key">
+                <kbd>K</kbd>
+                <span class="sound">tom</span>
+            </div>
+            <div data-key="76" class="key">
+                <kbd>L</kbd>
+                <span class="sound">tink</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <audio src="./sounds/boom.wav" controls id="sound-boom"></audio>
+            <audio src="./sounds/clap.wav" controls id="sound-clap"></audio>
+            <audio src="./sounds/hihat.wav" controls id="sound-hihat"></audio>
+            <audio src="./sounds/kick.wav" controls id="sound-kick"></audio>
+            <audio src="./sounds/openhat.wav" controls id="sound-openhat"></audio>
+            <audio src="./sounds/ride.wav" controls id="sound-ride"></audio>
+            <audio src="./sounds/snare.wav" controls id="sound-snare"></audio>
+            <audio src="./sounds/tink.wav" controls id="sound-tink"></audio>
+            <audio src="./sounds/tom.wav" controls id="sound-tom"></audio>
+        </div>
+
         <script src="drumkit.js"></script>
     </body>
 </html>
