@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lab 4 - Hobbit</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="root">
+            <div class="container">
+                <div class="container__header">
+                    <h1 class="container__title">Notes</h1>
+                    <button class="btn btn--add" onclick="openModal()">Add note</button>
+                </div>
+                <!-- <p>No notes, add your first note.</p> -->
+                <div class="notes">
+                    <div class="note">
+                        <div class="note__tools">
+                            <button class="btn">Edit</button>
+                            <button class="btn btn--delete">Delete</button>
+                        </div>
+                        <div class="note__content">
+                            <div class="note__title">My note</div>
+                            <div class="note__text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatum, voluptate,
+                                quibusdam, quia voluptas quod dolorum voluptatem quos quas quidem quae. Quisquam voluptatum,
+                                voluptate, quibusdam, quia voluptas quod dolorum voluptatem quos quas quidem quae.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="add-note-modal" class="modal">
+                <div class="modal__overlay" onclick="closeModal()"></div>
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h2 class="modal__title">Add note</h2>
+                        <button class="btn btn--close" onclick="closeModal()">Close</button>
+                    </div>
+                    <div class="modal__body">
+                        <form id="form-add-note" class="form">
+                            <div class="form__group">
+                                <label for="title">Title</label>
+                                <input type="text" id="title" />
+                            </div>
+                            <div class="form__group">
+                                <label for="text">Text</label>
+                                <textarea id="text" rows="5"></textarea>
+                            </div>
+                            <div class="form__group">
+                                <label for="text">Color</label>
+                                <select id="color">
+                                    <option value="green" selected>Green</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="yellow">Yellow</option>
+                                    <option value="red">Red</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn--add">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
