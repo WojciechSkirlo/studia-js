@@ -13,6 +13,8 @@
     --app-gray: #eaeaea;
     --app-red: #dc2626;
     --app-green: #10b981;
+    --app-blue: #3b82f6;
+    --app-yellow: #fbbf24;
 }
 
 body {
@@ -41,7 +43,7 @@ body {
 }
 
 .btn {
-    padding: 6px 10px;
+    padding: 7px 10px;
     background: var(--app-black);
     border: 1px solid var(--app-black);
     color: #fff;
@@ -50,13 +52,22 @@ body {
     cursor: pointer;
 }
 
-.btn--add {
+.btn--success {
     background-color: var(--app-green);
-    padding: 8px 10px;
     border: 1px solid var(--app-green);
 }
 
-.btn--delete {
+.btn--info {
+    border: 1px solid var(--app-blue);
+    background-color: var(--app-blue);
+}
+
+.btn--warning {
+    background-color: var(--app-yellow);
+    border: 1px solid var(--app-yellow);
+}
+
+.btn--danger {
     border: 1px solid var(--app-red);
     background-color: var(--app-red);
 }
@@ -69,6 +80,10 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid var(--app-black);
+}
+
+.note[data-pinned='true'] {
+    border-left-width: 5px
 }
 
 .note--yellow {
