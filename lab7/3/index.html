@@ -4,8 +4,51 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Lab 7 - 3.0</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        3.0
+        <div id="root">
+            <div class="container">
+                <div class="container__header">
+                    <h1 class="container__title">Widgets</h1>
+                    <button id="btn-add-widget" class="btn">Add widget</button>
+                </div>
+                <div class="widgets"></div>
+            </div>
+
+            <div id="add-widget-modal" class="modal">
+                <div id="modal-overlay" class="modal__overlay"></div>
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h2 class="modal__title">Add/Edit widget</h2>
+                        <button id="btn-close-modal" class="btn btn--close">Close</button>
+                    </div>
+                    <div class="modal__body">
+                        <form id="form-add-widget" class="form">
+                            <div class="form__group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" />
+                            </div>
+                            <!-- <div class="form__group">
+                                <label for="text">Text</label>
+                                <textarea id="text" rows="5"></textarea>
+                            </div> -->
+                            <div class="form__group">
+                                <label for="text">Color</label>
+                                <select title="colors" id="color">
+                                    <option value="green" selected>Green</option>
+                                    <option value="blue">Blue</option>
+                                    <option value="yellow">Yellow</option>
+                                    <option value="red">Red</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn--success">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
     </body>
 </html>
