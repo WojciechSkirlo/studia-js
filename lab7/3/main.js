@@ -58,7 +58,9 @@ const createWidget = (widget) => {
                 <button class="btn btn--danger" onclick="deleteWidget(${widget.id}); saveWidgets();">Delete</button>
             </div>
             <div class="widget__content">
-                <div class="widget__title">${widget.city} ${widget.temperature}℃</div>
+                <div class="widget__title">${widget.city} ${widget.temperature}℃ 
+                    <img src="http://openweathermap.org/img/wn/${widget.icon}.png" alt="weather icon">
+                </div>
                 <div class="text">Wilgotność powietrza: ${widget.humidity}%</div>
             </div>
         </div>`;
@@ -138,6 +140,7 @@ const onSubmit = async (event) => {
             lon,
             temperature: response.main.temp,
             humidity: response.main.humidity,
+            icon: response.weather[0]?.icon,
         };
 
         editWidget(editWidgetId, newWidget);
@@ -152,6 +155,7 @@ const onSubmit = async (event) => {
             lon,
             temperature: response.main.temp,
             humidity: response.main.humidity,
+            icon: response.weather[0]?.icon,
         };
 
         addWidget(newWidget);
@@ -204,6 +208,7 @@ const init = async () => {
 
         widget.temperature = response.main.temp;
         widget.humidity = response.main.humidity;
+        widget.icon = response.weather[0]?.icon;
 
         const widgetEl = createWidget(widget);
         widgetsContainer.insertAdjacentHTML('beforeend', widgetEl);
